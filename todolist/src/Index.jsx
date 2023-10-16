@@ -6,12 +6,12 @@ const Index = () => {
     const[todos,settodos]=useState([])
     useEffect(()=>{
 
-        axios.get('http://localhost:3003/Get')
+        axios.get('https://to-dos-list.vercel.app/Get')
         .then(result=>settodos(result.data))
         .catch(err=>console.log(err))
     },[])
     const handleEdit=(id)=>{
-        axios.put('http://localhost:3003/update/'+id)
+        axios.put('https://to-dos-list.vercel.app/update/'+id)
         .then(result=>{
             location.reload()})
 
@@ -20,7 +20,7 @@ const Index = () => {
 
     }
     const handleDelete=(id)=>{
-        axios.delete('http://localhost:3003/delete/'+id)
+        axios.delete('https://to-dos-list.vercel.app/delete/'+id)
         .then(result=>{location.reload()})
         .catch(err=>console.log(err))
         
