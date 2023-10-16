@@ -6,7 +6,7 @@ const app=express()
 app.use(cors(
     {
         origin: ["https://todos-list-frontend.vercel.app"],
-        methods: ["GET", "POST","PUT"],
+        methods: ["GET", "POST","PUT" ,"Delete"],
         credentials: true
     }
 ))
