@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Inputfld from './Inputfld'
 import axios from 'axios'
 import { BsCircleFill, BsFillCheckCircleFill, BsFillCircleFill, BsFillTrashFill } from 'react-icons/bs';
+axios.defaults.withCredentials = true;
 const Index = () => {
     const[todos,settodos]=useState([])
     useEffect(()=>{
