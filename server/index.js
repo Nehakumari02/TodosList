@@ -16,9 +16,6 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
 })
-app.get('/', (req, res) => {
-  req.json("hello");
-})
 app.get('/Get',(req,res)=>{
     todoModel.find()
     .then(result=>res.json(result))
