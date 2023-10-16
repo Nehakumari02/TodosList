@@ -40,6 +40,10 @@ app.delete('/delete/:id',(req,res)=>{
     .catch(err=>res.json(err))
     
 })
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+})
 app.listen(3003,()=>{
     console.log("server is running")
 })
