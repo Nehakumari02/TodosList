@@ -40,7 +40,6 @@ app.delete('/delete/:id',(req,res)=>{
     .catch(err=>res.json(err))
     
 })
-const port = process.env.PORT || 3003;
-app.listen(port,()=>{
+app.listen(3003,()=>{
     console.log("server is running")
 })
