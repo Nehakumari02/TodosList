@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import Inputfld from './Inputfld'
 import axios from 'axios'
 import { BsCircleFill, BsFillCheckCircleFill, BsFillCircleFill, BsFillTrashFill } from 'react-icons/bs';
-axios.defaults.withCredentials = true;
+
 const Index = () => {
     const[todos,settodos]=useState([])
+    axios.defaults.withCredentials = true;
     useEffect(()=>{
 
         axios.get('https://to-dos-list-gray.vercel.app/Get')
