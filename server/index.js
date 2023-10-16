@@ -12,10 +12,6 @@ app.use(cors(
 ))
 app.use(express.json())
 mongoose.connect('mongodb://127.0.0.1:27017/todo')
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  next();
-})
 app.get('/Get',(req,res)=>{
     todoModel.find()
     .then(result=>res.json(result))
@@ -44,7 +40,7 @@ app.delete('/delete/:id',(req,res)=>{
     .catch(err=>res.json(err))
     
 })
-
-app.listen(3003,()=>{
+const port = process.env.PORT || 3003;
+app.listen(port,()=>{
     console.log("server is running")
 })
