@@ -3,7 +3,13 @@ const mongoose=require('mongoose')
 const cors=require('cors')
 const todoModel=require('./Models/todolist')
 const app=express()
-app.use(cors())
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-frontend.vercel.app"],
+        methods: ["POST", "GET"],
+        credentials: true
+    }
+))
 app.use(express.json())
 mongoose.connect('mongodb://127.0.0.1:27017/todo')
 app.get('/Get',(req,res)=>{
